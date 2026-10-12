@@ -1,0 +1,81 @@
+# ============================================================
+# docker-compose.yml — Scoring Résiliation
+# Usage local / démo :
+#   docker-compose up --build
+# Accès :
+#   Frontend : http://localhost:80
+#   API      : http://localhost:8000
+#   API Docs : http://localhost:8000/docs
+# ============================================================
+
+version: "3.9"
+
+services:
+
+  # ----------------------------------------------------------
+  # API FastAPI
+  # ----------------------------------------------------------
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    image: scoring-api:latest
+    container_name: scoring-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      # Sécurité — surcharger obligatoirement en prod
+      SCORING_JWT_SECRET: ${SCORING_JWT_SECRET:-dev-secret-change-me-in-prod}
+      SCORING_ADMIN_PASSWORD: ${SCORING_ADMIN_PASSWORD:-ChangeMoi123!}
+      # Oracle — surcharger obligatoirement en prod
+      ORACLE_USER: ${ORACLE_USER:-d_fortis}
+      ORACLE_PASSWORD: ${ORACLE_PASSWORD:-d_fortis}
+      ORACLE_HOST: ${ORACLE_HOST:-172.25.72.29}
+      ORACLE_PORT: ${ORACLE_PORT:-1522}
+      ORACLE_SERVICE: ${ORACLE_SERVICE:-MSCFO2D1.LDSA.COM}
+      # Applicatif
+      PYTHONUNBUFFERED: "1"
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+    volumes:
+      # Artefacts ML montés depuis api/artifacts/ (ne pas embarquer dans l'image en prod)
+      - ./api/artifacts:/app/artifacts:ro
+      - ./api/features_list.txt:/app/features_list.txt:ro
+    networks:
+      - scoring-network
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # ----------------------------------------------------------
+  # Frontend Angular (nginx)
+  # ----------------------------------------------------------
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    image: scoring-frontend:latest
+    container_name: scoring-frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      api:
+        condition: service_healthy
+    networks:
+      - scoring-network
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:80"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+networks:
+  scoring-network:
+    driver: bridge
+    name: scoring-network

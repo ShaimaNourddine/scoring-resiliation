@@ -1,0 +1,59 @@
+.batch-container {
+  padding: 24px;
+
+  .description {
+    color: #666;
+    margin-bottom: 24px;
+  }
+
+  .loading-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .error-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #f44336;
+    margin-top: 16px;
+  }
+
+  .result-section {
+    margin-top: 24px;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+
+    .summary-item {
+      text-align: center;
+      padding: 16px;
+      border-radius: 8px;
+      background: #f5f5f5;
+
+      .value {
+        display: block;
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .label {
+        display: block;
+        font-size: 12px;
+        color: #666;
+        margin-top: 4px;
+      }
+
+      &.critique { border-left: 4px solid #f44336; }
+      &.eleve { border-left: 4px solid #ff9800; }
+      &.moyen { border-left: 4px solid #ffeb3b; }
+      &.faible { border-left: 4px solid #4caf50; }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+<div class="batch-container">
+  <h2>Scoring Batch du Portefeuille</h2>
+  <p class="description">Lance le scoring de l'ensemble des contrats du portefeuille.</p>
+
+  <button mat-raised-button color="primary" (click)="lancerBatch()" [disabled]="chargement">
+    <mat-icon>play_circle</mat-icon>
+    Lancer le scoring batch
+  </button>
+
+  <div class="loading-section" *ngIf="chargement">
+    <mat-spinner diameter="48"></mat-spinner>
+    <p>Scoring en cours... Cela peut prendre plusieurs minutes.</p>
+  </div>
+
+  <div class="error-section" *ngIf="erreur">
+    <mat-icon>error_outline</mat-icon>
+    <span>{{ erreur }}</span>
+  </div>
+
+  <div class="result-section" *ngIf="resultat">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Résultats du scoring batch</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="summary-grid">
+          <div class="summary-item">
+            <span class="value">{{ resultat.summary.total_contrats }}</span>
+            <span class="label">Contrats scorés</span>
+          </div>
+          <div class="summary-item critique">
+            <span class="value">{{ resultat.summary.contrats_critiques }}</span>
+            <span class="label">Critiques</span>
+          </div>
+          <div class="summary-item eleve">
+            <span class="value">{{ resultat.summary.contrats_eleves }}</span>
+            <span class="label">Élevés</span>
+          </div>
+          <div class="summary-item moyen">
+            <span class="value">{{ resultat.summary.contrats_moderes }}</span>
+            <span class="label">Moyens</span>
+          </div>
+          <div class="summary-item faible">
+            <span class="value">{{ resultat.summary.contrats_faibles }}</span>
+            <span class="label">Faibles</span>
+          </div>
+          <div class="summary-item">
+            <span class="value">{{ (resultat.summary.score_moyen * 100).toFixed(1) }}%</span>
+            <span class="label">Score moyen</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

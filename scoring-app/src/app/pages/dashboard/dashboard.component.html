@@ -1,0 +1,182 @@
+<div class="page-container">
+  <div class="page-header">
+    <h2>Dashboard</h2>
+    <div class="header-actions">
+      <button mat-raised-button color="primary" (click)="allerAuScoring()">
+        <mat-icon>assessment</mat-icon>
+        Scorer un contrat
+      </button>
+      <button mat-raised-button (click)="chargerStatistiques()">
+        <mat-icon>refresh</mat-icon>
+        Rafraîchir
+      </button>
+    </div>
+  </div>
+
+  <mat-tab-group class="dashboard-tabs" animationDuration="0ms">
+    <mat-tab label="Statistiques">
+      <ng-template matTabContent>
+
+  <!-- État de chargement -->
+  <div class="loading-state" *ngIf="chargement">
+    <mat-spinner diameter="40"></mat-spinner>
+    <p>Chargement des statistiques...</p>
+  </div>
+
+  <!-- État vide / erreur -->
+  <div class="empty-state" *ngIf="!chargement && !statistiques">
+    <mat-icon class="empty-icon">info_outline</mat-icon>
+    <p class="empty-message">Aucune donnée. Lancez l'API et cliquez sur Rafraîchir.</p>
+    <p class="empty-error" *ngIf="erreur">{{ erreur }}</p>
+  </div>
+
+  <!-- Statistiques -->
+  <div class="stats-grid" *ngIf="!chargement && statistiques">
+    <mat-card class="stat-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar class="stat-icon total">folder</mat-icon>
+        <mat-card-title>{{ statistiques.total_contrats }}</mat-card-title>
+        <mat-card-subtitle>Total contrats</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+
+    <mat-card class="stat-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar class="stat-icon critique">error</mat-icon>
+        <mat-card-title>{{ statistiques.critique }}</mat-card-title>
+        <mat-card-subtitle>Critique</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+
+    <mat-card class="stat-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar class="stat-icon eleve">warning</mat-icon>
+        <mat-card-title>{{ statistiques.eleve }}</mat-card-title>
+        <mat-card-subtitle>Élevé</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+
+    <mat-card class="stat-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar class="stat-icon moyen">info</mat-icon>
+        <mat-card-title>{{ statistiques.moyen }}</mat-card-title>
+        <mat-card-subtitle>Moyen</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+
+    <mat-card class="stat-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar class="stat-icon faible">check_circle</mat-icon>
+        <mat-card-title>{{ statistiques.faible }}</mat-card-title>
+        <mat-card-subtitle>Faible</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+
+    <mat-card class="stat-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar class="stat-icon score">speed</mat-icon>
+        <mat-card-title>{{ statistiques.score_moyen | number:'1.1-1' }}%</mat-card-title>
+        <mat-card-subtitle>Score moyen</mat-card-subtitle>
+      </mat-card-header>
+    </mat-card>
+  </div>
+
+  <!-- Filtres -->
+  <div class="filtres-section" *ngIf="statistiques">
+    <mat-form-field appearance="outline" class="filtre-field">
+      <mat-label>Rechercher un contrat</mat-label>
+      <input matInput [(ngModel)]="recherche" placeholder="N° contrat" (input)="filtrerContrats()">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="filtre-field">
+      <mat-label>Niveau de risque</mat-label>
+      <mat-select [(ngModel)]="filtreNiveau" (selectionChange)="filtrerContrats()">
+        <mat-option value="">Tous</mat-option>
+        <mat-option value="CRITIQUE">Critique</mat-option>
+        <mat-option value="ELEVE">Élevé</mat-option>
+        <mat-option value="MOYEN">Moyen</mat-option>
+        <mat-option value="FAIBLE">Faible</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <!-- Contrats scorés avec panneau déroulant -->
+  <div class="top-contrats-section" *ngIf="!chargement && contratsFiltres.length">
+    <h3>Contrats scorés</h3>
+    <table class="top-contrats-table">
+      <thead>
+        <tr>
+          <th>Contrat</th>
+          <th>Score</th>
+          <th>Niveau</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let contrat of contratsFiltres">
+          <tr (click)="togglePanneau(contrat.contrat_id)"
+              [class.row-active]="panneauOuvertId === contrat.contrat_id"
+              class="clickable-row">
+            <td>{{ contrat.contrat_id }}</td>
+            <td>{{ (contrat.score_risque * 100).toFixed(1) }}%</td>
+            <td>
+              <span class="badge-niveau"
+                    [ngClass]="{
+                      'niveau-critique': contrat.niveau_risque === 'CRITIQUE',
+                      'niveau-eleve': contrat.niveau_risque === 'ÉLEVÉ',
+                      'niveau-moyen': contrat.niveau_risque === 'MOYEN',
+                      'niveau-faible': contrat.niveau_risque === 'FAIBLE'
+                    }">
+                {{ contrat.niveau_risque }}
+              </span>
+            </td>
+            <td class="expand-icon">
+              <mat-icon>{{ panneauOuvertId === contrat.contrat_id ? 'expand_less' : 'expand_more' }}</mat-icon>
+            </td>
+          </tr>
+          <!-- Panneau déroulant (accordion) -->
+          <tr *ngIf="panneauOuvertId === contrat.contrat_id" class="accordion-row">
+            <td colspan="4" class="accordion-cell">
+              <div class="accordion-panel">
+                <app-panneau-explication
+                  [facteurs]="facteursAccordion"
+                  [moyennes]="moyennesAccordion"
+                  [chargement]="chargementAccordion"
+                  [erreur]="erreurAccordion"
+                  [explicationDisponible]="explicationAccordionDisponible"
+                  (reessayer)="rechargerAccordion()">
+                </app-panneau-explication>
+              </div>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+
+      </ng-template>
+    </mat-tab>
+
+    <mat-tab label="Power BI">
+      <ng-template matTabContent>
+        <div class="powerbi-container">
+          <iframe *ngIf="powerBiUrl"
+                  [src]="powerBiUrl"
+                  class="powerbi-iframe"
+                  title="Rapport Power BI - Scoring Résiliation"
+                  allowfullscreen>
+          </iframe>
+          <div class="powerbi-empty" *ngIf="!powerBiUrl">
+            <mat-icon class="empty-icon">bar_chart</mat-icon>
+            <p>Aucun rapport Power BI configuré.</p>
+            <p class="powerbi-empty-hint">
+              Renseignez <code>powerBiEmbedUrl</code> dans <code>environment.ts</code>
+              avec le lien d'intégration sécurisé de votre rapport Power BI Service.
+            </p>
+          </div>
+        </div>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</div>

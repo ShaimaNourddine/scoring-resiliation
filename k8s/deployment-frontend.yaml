@@ -1,0 +1,73 @@
+# ============================================================
+# Deployment — Frontend Angular (nginx)
+# ============================================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scoring-frontend
+  namespace: scoring
+  labels:
+    app: scoring-frontend
+    version: "1.0"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: scoring-frontend
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      labels:
+        app: scoring-frontend
+        version: "1.0"
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 101      # nginx user
+        fsGroup: 101
+
+      containers:
+        - name: frontend
+          image: scoring-frontend:latest  # En prod : <account>.dkr.ecr.<region>.amazonaws.com/scoring-frontend:<tag>
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+              name: http
+
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "50m"
+            limits:
+              memory: "128Mi"
+              cpu: "200m"
+
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 10
+            periodSeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 3
+
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 3
+
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+
+      restartPolicy: Always

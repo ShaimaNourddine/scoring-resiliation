@@ -1,0 +1,72 @@
+# ============================================================
+# Ingress — routage HTTP entrant via AWS ALB (prod)
+#           ou nginx ingress controller (local/kind)
+#
+# Pour kind/minikube :
+#   kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+#
+# Pour AWS EKS :
+#   Remplacer l'annotation kubernetes.io/ingress.class par :
+#   alb.ingress.kubernetes.io/scheme: internet-facing
+#   alb.ingress.kubernetes.io/target-type: ip
+# ============================================================
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: scoring-ingress
+  namespace: scoring
+  labels:
+    app: scoring-resiliation
+  annotations:
+    # nginx ingress controller (local)
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "60"
+    nginx.ingress.kubernetes.io/proxy-body-size: "10m"
+
+    # AWS ALB (décommenter pour EKS)
+    # kubernetes.io/ingress.class: "alb"
+    # alb.ingress.kubernetes.io/scheme: internet-facing
+    # alb.ingress.kubernetes.io/target-type: ip
+    # alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+    # alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:<region>:<account>:certificate/<id>
+
+spec:
+  rules:
+    # Règle pour le frontend (chemin racine)
+    - host: scoring.masteri.local    # En prod : scoring.votre-domaine.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: scoring-frontend-svc
+                port:
+                  number: 80
+
+          # L'API est aussi accessible directement sous /api/
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: scoring-api-svc
+                port:
+                  number: 8000
+
+          # Docs Swagger accessibles en dev
+          - path: /docs
+            pathType: Prefix
+            backend:
+              service:
+                name: scoring-api-svc
+                port:
+                  number: 8000
+
+          - path: /health
+            pathType: Exact
+            backend:
+              service:
+                name: scoring-api-svc
+                port:
+                  number: 8000

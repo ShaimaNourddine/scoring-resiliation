@@ -1,0 +1,129 @@
+# ============================================================
+# Deployment — API FastAPI scoring résiliation
+# ============================================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scoring-api
+  namespace: scoring
+  labels:
+    app: scoring-api
+    version: "1.0"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: scoring-api
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0          # Zéro downtime pendant le déploiement
+  template:
+    metadata:
+      labels:
+        app: scoring-api
+        version: "1.0"
+    spec:
+      # Sécurité : pas de root
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1001
+        fsGroup: 1001
+
+      containers:
+        - name: api
+          image: scoring-api:latest   # En prod : <account>.dkr.ecr.<region>.amazonaws.com/scoring-api:<tag>
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+              name: http
+
+          # Variables non sensibles depuis ConfigMap
+          envFrom:
+            - configMapRef:
+                name: scoring-api-config
+
+          # Variables sensibles depuis Secret
+          env:
+            - name: SCORING_JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: scoring-api-secret
+                  key: SCORING_JWT_SECRET
+            - name: SCORING_ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: scoring-api-secret
+                  key: SCORING_ADMIN_PASSWORD
+            - name: ORACLE_USER
+              valueFrom:
+                secretKeyRef:
+                  name: scoring-api-secret
+                  key: ORACLE_USER
+            - name: ORACLE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: scoring-api-secret
+                  key: ORACLE_PASSWORD
+            - name: ORACLE_DSN
+              valueFrom:
+                secretKeyRef:
+                  name: scoring-api-secret
+                  key: ORACLE_DSN
+
+          # Modèle ML monté depuis un PersistentVolume
+          volumeMounts:
+            - name: model-volume
+              mountPath: /app/model
+              readOnly: true
+            - name: features-config
+              mountPath: /app/feature_names.txt
+              subPath: feature_names.txt
+              readOnly: true
+
+          # Ressources
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "1000m"
+
+          # Healthchecks Kubernetes
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 40
+            periodSeconds: 30
+            timeoutSeconds: 10
+            failureThreshold: 3
+
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 20
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+
+          # Sécurité container
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: false
+            capabilities:
+              drop:
+                - ALL
+
+      volumes:
+        - name: model-volume
+          persistentVolumeClaim:
+            claimName: model-pvc
+        - name: features-config
+          configMap:
+            name: scoring-api-config
+
+      restartPolicy: Always

@@ -1,0 +1,88 @@
+<div class="panneau-explication">
+  <!-- État de chargement -->
+  @if (chargement) {
+    <div class="etat-chargement">
+      <mat-spinner diameter="40"></mat-spinner>
+      <p>Calcul de l'explication en cours...</p>
+    </div>
+  }
+
+  <!-- État d'erreur -->
+  @if (!chargement && erreur) {
+    <div class="etat-erreur">
+      <mat-icon>error_outline</mat-icon>
+      <p>{{ erreur }}</p>
+      <button mat-stroked-button color="primary" (click)="onReessayer()">
+        <mat-icon>refresh</mat-icon>
+        Réessayer
+      </button>
+    </div>
+  }
+
+  <!-- Explication non disponible -->
+  @if (!chargement && !erreur && !explicationDisponible) {
+    <div class="etat-indisponible">
+      <mat-icon>info_outline</mat-icon>
+      <p>Explication non disponible pour ce contrat</p>
+    </div>
+  }
+
+  <!-- Contenu principal -->
+  @if (!chargement && !erreur && explicationDisponible && facteursAffiches.length > 0) {
+    <div class="contenu-explication">
+      <!-- Barres horizontales SHAP -->
+      <div class="barres-shap">
+        <h4>Facteurs explicatifs</h4>
+        @for (facteur of facteursAffiches; track facteur.nom_variable) {
+          <div class="barre-row">
+            <span class="barre-libelle">{{ facteur.libelle }}</span>
+            <div class="barre-container">
+              <div
+                class="barre"
+                [class.barre-rouge]="facteur.couleurBarre === 'rouge'"
+                [class.barre-vert]="facteur.couleurBarre === 'vert'"
+                [class.direction-droite]="facteur.directionBarre === 'droite'"
+                [class.direction-gauche]="facteur.directionBarre === 'gauche'"
+                [style.width.%]="facteur.largeurBarre">
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+
+      <!-- Tableau comparatif -->
+      <div class="tableau-comparatif">
+        <h4>Comparaison avec le portefeuille</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Variable</th>
+              <th>Valeur contrat</th>
+              <th>Moyenne portefeuille</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (facteur of facteursAffiches; track facteur.nom_variable) {
+              <tr>
+                <td>{{ facteur.libelle }}</td>
+                <td class="valeur-cellule">
+                  <span>{{ facteur.valeur_contrat | number:'1.2-4' }}</span>
+                  @if (facteur.indicateur === 'fleche-rouge-haut') {
+                    <mat-icon class="indicateur-rouge">arrow_upward</mat-icon>
+                  }
+                  @if (facteur.indicateur === 'fleche-verte-bas') {
+                    <mat-icon class="indicateur-vert">arrow_downward</mat-icon>
+                  }
+                </td>
+                <td>{{ facteur.moyenne_portefeuille | number:'1.2-4' }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+        @if (!moyennes) {
+          <p class="avertissement-moyennes">Comparaison non disponible</p>
+        }
+      </div>
+    </div>
+  }
+</div>

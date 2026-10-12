@@ -1,0 +1,125 @@
+<div class="scoring-container">
+  <h2>Scoring Contrat Individuel</h2>
+  <p class="description">Saisissez un numéro de contrat pour évaluer son risque de résiliation.</p>
+
+  <!-- Formulaire de saisie -->
+  <div class="form-section">
+    <mat-form-field appearance="outline" class="contrat-field">
+      <mat-label>Numéro de contrat</mat-label>
+      <input matInput
+             [(ngModel)]="contratId"
+             placeholder="Ex: CNT000123"
+             (keyup.enter)="scorerContrat()"
+             [disabled]="chargement">
+    </mat-form-field>
+
+    <button mat-raised-button
+            color="primary"
+            (click)="scorerContrat()"
+            [disabled]="!contratId.trim() || chargement">
+      <mat-icon>assessment</mat-icon>
+      Scorer
+    </button>
+
+    <button mat-button
+            (click)="reinitialiser()"
+            [disabled]="chargement"
+            *ngIf="resultat || erreur">
+      <mat-icon>refresh</mat-icon>
+      Réinitialiser
+    </button>
+  </div>
+
+  <!-- Spinner de chargement -->
+  <div class="loading-section" *ngIf="chargement">
+    <mat-spinner diameter="48"></mat-spinner>
+    <p>Calcul du score en cours...</p>
+  </div>
+
+  <!-- Message d'erreur -->
+  <div class="error-section" *ngIf="erreur">
+    <mat-icon>error_outline</mat-icon>
+    <span>{{ erreur }}</span>
+    <button mat-button color="primary" (click)="scorerContrat()">
+      Réessayer
+    </button>
+  </div>
+
+  <!-- Résultat du scoring -->
+  <div class="result-section" *ngIf="resultat">
+    <mat-card class="result-card">
+      <mat-card-header>
+        <mat-card-title>Résultat du scoring</mat-card-title>
+        <mat-card-subtitle>Contrat : {{ resultat.contrat_id }}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <!-- Score numérique -->
+        <div class="score-display">
+          <div class="score-value" [style.color]="getNiveauCouleur(resultat.niveau_risque)">
+            {{ (resultat.score_risque * 100).toFixed(1) }}%
+          </div>
+          <div class="score-label">Score de risque</div>
+        </div>
+
+        <!-- Jauge visuelle -->
+        <div class="jauge-section">
+          <app-jauge-score [score]="resultat.score_risque"></app-jauge-score>
+        </div>
+
+        <!-- Badge niveau de risque -->
+        <div class="niveau-section">
+          <span class="niveau-label">Niveau de risque :</span>
+          <app-niveau-badge [niveau]="resultat.niveau_risque"></app-niveau-badge>
+        </div>
+
+        <!-- Phrase récap -->
+        <div class="recap-section" *ngIf="resultat.top_facteurs && resultat.top_facteurs.length > 0">
+          <p class="recap-text">
+            <strong>Synthèse :</strong> Ce contrat présente un risque 
+            <span [style.color]="getNiveauCouleur(resultat.niveau_risque)">{{ resultat.niveau_risque | lowercase }}</span> 
+            de résiliation ({{ (resultat.score_risque * 100).toFixed(1) }}%). 
+            Les principaux facteurs contribuant à ce score sont 
+            <span *ngFor="let f of resultat.top_facteurs.slice(0, 3); let i = index; let last = last">
+              <strong>{{ getFeatureLabel(f.feature) }}</strong><span *ngIf="!last && i < 2">, </span><span *ngIf="last"> et </span>
+            </span>.
+          </p>
+        </div>
+
+        <!-- Top facteurs -->
+        <div class="facteurs-section" *ngIf="resultat.top_facteurs && resultat.top_facteurs.length > 0">
+          <h4>Principaux facteurs de risque</h4>
+          <div class="facteurs-list">
+            <div class="facteur-item" *ngFor="let facteur of resultat.top_facteurs">
+              <span class="facteur-name">{{ getFeatureLabel(facteur.feature) }}</span>
+              <span class="facteur-bar">
+                <span class="bar" [class.positive]="facteur.contribution > 0" [class.negative]="facteur.contribution < 0"
+                      [style.width.%]="getBarWidth(facteur.contribution)"></span>
+              </span>
+              <span class="facteur-value" [class.positive]="facteur.contribution > 0" [class.negative]="facteur.contribution < 0">
+                {{ facteur.contribution > 0 ? '+' : '' }}{{ facteur.contribution.toFixed(4) }}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timestamp -->
+        <div class="timestamp-section">
+          <small>Calculé le : {{ resultat.timestamp }}</small>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Panneau d'explication -->
+  <div class="explication-section" *ngIf="resultat">
+    <app-panneau-explication
+      [facteurs]="facteurs"
+      [moyennes]="moyennes"
+      [chargement]="chargementExplication"
+      [erreur]="erreurExplication"
+      [explicationDisponible]="explicationDisponible"
+      (reessayer)="rechargerExplication()">
+    </app-panneau-explication>
+  </div>
+</div>

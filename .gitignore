@@ -1,0 +1,62 @@
+# ============================================================
+# .gitignore — Scoring Résiliation
+# ============================================================
+
+# --- Variables d'environnement (JAMAIS committer) ---
+.env
+.env.local
+.env.production
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+coverage-api.xml
+htmlcov/
+.hypothesis/
+
+# --- Modèle ML (fichiers lourds — utiliser Git LFS si nécessaire) ---
+*.pkl
+*.joblib
+model/
+mlruns/
+mlartifacts/
+feature_importance_optionC.png
+
+# --- Angular / Node ---
+scoring-app/node_modules/
+scoring-app/dist/
+scoring-app/.angular/
+scoring-app/coverage/
+
+# --- Docker ---
+*.tar
+
+# --- Kubernetes secrets (ne jamais committer les vraies valeurs) ---
+k8s/secret-prod.yaml
+k8s/*-prod.yaml
+
+# --- Terraform ---
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.backup
+terraform/*.tfvars
+terraform/.terraform.lock.hcl
+terraform/terraform.tfplan
+
+# --- IDE ---
+.vscode/settings.json
+.idea/
+*.suo
+*.user
+
+# --- OS ---
+.DS_Store
+Thumbs.db

@@ -1,0 +1,86 @@
+.admin-users-container {
+  padding: 8px;
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.form-card {
+  margin-bottom: 24px;
+  max-width: 500px;
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.button-spinner {
+  display: inline-block;
+}
+
+.loading-section {
+  display: flex;
+  justify-content: center;
+  padding: 48px;
+}
+
+.error-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #f44336;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+
+  mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.users-table {
+  width: 100%;
+}
+
+.role-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  background-color: #e0e0e0;
+  font-size: 0.8rem;
+  font-weight: 500;
+
+  &.role-admin {
+    background-color: #1976d2;
+    color: white;
+  }
+}
+
+.statut-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+
+  &.statut-actif {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+  }
+
+  &.statut-inactif {
+    background-color: #ffebee;
+    color: #c62828;
+  }
+}

@@ -1,0 +1,103 @@
+@use '@angular/material' as mat;
+
+:root {
+  --primary-color: #1976d2;
+  --accent-color: #ff4081;
+  --warn-color: #f44336;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Material toolbar override for primary color */
+.mat-toolbar {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+/* Raised buttons with visible colors */
+.mat-mdc-raised-button.mat-primary {
+  --mdc-protected-button-container-color: var(--primary-color);
+  --mdc-protected-button-label-text-color: white;
+}
+
+.mat-mdc-raised-button.mat-accent {
+  --mdc-protected-button-container-color: var(--accent-color);
+  --mdc-protected-button-label-text-color: white;
+}
+
+.mat-mdc-raised-button.mat-warn {
+  --mdc-protected-button-container-color: var(--warn-color);
+  --mdc-protected-button-label-text-color: white;
+}
+
+/* Flat buttons with visible colors */
+.mat-mdc-unelevated-button.mat-primary {
+  --mdc-filled-button-container-color: var(--primary-color);
+  --mdc-filled-button-label-text-color: white;
+}
+
+.mat-mdc-unelevated-button.mat-accent {
+  --mdc-filled-button-container-color: var(--accent-color);
+  --mdc-filled-button-label-text-color: white;
+}
+
+/* Risk level color classes */
+.niveau-critique {
+  background-color: #f44336;
+  color: white;
+}
+
+.niveau-eleve {
+  background-color: #ff9800;
+  color: white;
+}
+
+.niveau-moyen {
+  background-color: #ffeb3b;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.niveau-faible {
+  background-color: #4caf50;
+  color: white;
+}
+
+/* Risk level text color classes */
+.text-critique {
+  color: #f44336;
+}
+
+.text-eleve {
+  color: #ff9800;
+}
+
+.text-moyen {
+  color: #f9a825;
+}
+
+.text-faible {
+  color: #4caf50;
+}
+
+/* SnackBar styles for notifications (Task 10.1) */
+.snackbar-erreur {
+  --mdc-snackbar-container-color: #f44336;
+  --mdc-snackbar-supporting-text-color: white;
+  --mat-snack-bar-button-color: white;
+}
+
+.snackbar-succes {
+  --mdc-snackbar-container-color: #4caf50;
+  --mdc-snackbar-supporting-text-color: white;
+  --mat-snack-bar-button-color: white;
+}
+
+.snackbar-info {
+  --mdc-snackbar-container-color: #2196f3;
+  --mdc-snackbar-supporting-text-color: white;
+  --mat-snack-bar-button-color: white;
+}

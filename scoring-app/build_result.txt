@@ -1,0 +1,1701 @@
+BUILD FAILED
+STDOUT:
+❯ Building...
+✔ Building...
+Application bundle generation failed. [26.962 seconds]
+
+
+STDERR:
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:16:0:
+      16 │ describe('DashboardComponent - Accordion behavior', () => {
+         ╵ ~~~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'beforeEach'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:38:2:
+      38 │   beforeEach(() => {
+         ╵   ~~~~~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'jasmine'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:40:29:
+      40 │       getExplicationContrat: jasmine.createSpy('getExplicationCont...
+         ╵                              ~~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'jasmine'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:41:31:
+      41 │       getMoyennesPortefeuille: jasmine.createSpy('getMoyennesPorte...
+         ╵                                ~~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'jasmine'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:45:23:
+      45 │       getStatistiques: jasmine.createSpy('getStatistiques').and.re...
+         ╵                        ~~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'jasmine'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:49:16:
+      49 │       navigate: jasmine.createSpy('navigate')
+         ╵                 ~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:62:2:
+      62 │   describe('Initial state', () => {
+         ╵   ~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:63:4:
+      63 │     it('should have panneauOuvertId = null (no panel open)', () => {
+         ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:64:6:
+      64 │       expect(component.panneauOuvertId).toBeNull();
+         ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:67:4:
+      67 │     it('should have chargementAccordion = false initially', () => {
+         ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:68:6:
+      68 │       expect(component.chargementAccordion).toBe(false);
+         ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:71:4:
+      71 │     it('should have facteursAccordion as empty array initially', (...
+         ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:72:6:
+      72 │       expect(component.facteursAccordion).toEqual([]);
+         ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:75:4:
+      75 │     it('should have erreurAccordion = null initially', () => {
+         ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:76:6:
+      76 │       expect(component.erreurAccordion).toBeNull();
+         ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:83:2:
+      83 │   describe('Open a panel', () => {
+         ╵   ~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:84:4:
+      84 │     it('should set panneauOuvertId to the clicked contrat ID', () ...
+         ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:86:6:
+      86 │       expect(component.panneauOuvertId).toBe('CTR-001');
+         ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:89:4:
+      89 │     it('should set chargementAccordion = true before the service r...
+         ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:96:6:
+      96 │       expect(component.chargementAccordion).toBe(true);
+         ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:100:6:
+      100 │       expect(component.chargementAccordion).toBe(false);
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:103:4:
+      103 │     it('should call explicabiliteService.getExplicationContrat wi...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:105:6:
+      105 │       expect(mockExplicabiliteService.getExplicationContrat).toHa...
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:108:4:
+      108 │     it('should call explicabiliteService.getMoyennesPortefeuille ...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:110:6:
+      110 │       expect(mockExplicabiliteService.getMoyennesPortefeuille).to...
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:113:4:
+      113 │     it('should populate facteursAccordion after data loads', () => {
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:115:6:
+      115 │       expect(component.facteursAccordion).toEqual(mockExplication...
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:122:2:
+      122 │   describe('Close by clicking same panel', () => {
+          ╵   ~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:123:4:
+      123 │     it('should set panneauOuvertId = null when clicking the same ...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:125:6:
+      125 │       expect(component.panneauOuvertId).toBe('CTR-001');
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:128:6:
+      128 │       expect(component.panneauOuvertId).toBeNull();
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:131:4:
+      131 │     it('should not call explicabiliteService when closing a panel...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:138:6:
+      138 │       expect(mockExplicabiliteService.getExplicationContrat).not....
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:139:6:
+      139 │       expect(mockExplicabiliteService.getMoyennesPortefeuille).no...
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:146:2:
+      146 │   describe('Only one panel open at a time (Requirement 4.4)', () ...
+          ╵   ~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:147:4:
+      147 │     it('should switch panneauOuvertId to the new contrat when cli...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:149:6:
+      149 │       expect(component.panneauOuvertId).toBe('CTR-001');
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:152:6:
+      152 │       expect(component.panneauOuvertId).toBe('CTR-002');
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:155:4:
+      155 │     it('should clear facteursAccordion when switching to a new pa...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:162:6:
+      162 │       expect(component.facteursAccordion.length).toBeGreaterThan(0);
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:168:6:
+      168 │       expect(component.facteursAccordion).toEqual([]);
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:171:4:
+      171 │     it('should set chargementAccordion = true when switching pane...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:176:6:
+      176 │       expect(component.chargementAccordion).toBe(false); // alrea...
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:180:6:
+      180 │       expect(component.chargementAccordion).toBe(true);
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:183:4:
+      183 │     it('should call getExplicationContrat with the new contrat ID...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:186:6:
+      186 │       expect(mockExplicabiliteService.getExplicationContrat).toHa...
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:193:2:
+      193 │   describe('Full interaction sequence (Requirement 4.5)', () => {
+          ╵   ~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:194:4:
+      194 │     it('CTR-001 → CTR-002 → CTR-002 → panneauOuvertId = nul...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:196:6:
+      196 │       expect(component.panneauOuvertId).toBe('CTR-001');
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:199:6:
+      199 │       expect(component.panneauOuvertId).toBe('CTR-002');
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:202:6:
+      202 │       expect(component.panneauOuvertId).toBeNull();
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:205:4:
+      205 │     it('should handle rapid toggling of multiple panels correctly...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:209:6:
+      209 │       expect(component.panneauOuvertId).toBe('CTR-003');
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:212:6:
+      212 │       expect(component.panneauOuvertId).toBeNull();
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:215:4:
+      215 │     it('should handle re-opening a previously closed panel', () => {
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:218:6:
+      218 │       expect(component.panneauOuvertId).toBeNull();
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:221:6:
+      221 │       expect(component.panneauOuvertId).toBe('CTR-001');
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:228:2:
+      228 │   describe('Loading and data state transitions', () => {
+          ╵   ~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:229:4:
+      229 │     it('should set chargementAccordion to true before response ar...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:234:6:
+      234 │       expect(component.chargementAccordion).toBe(true);
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:237:4:
+      237 │     it('should clear erreurAccordion when opening a new panel', (...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:240:6:
+      240 │       expect(component.erreurAccordion).toBeNull();
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:243:4:
+      243 │     it('should set explicationAccordionDisponible to true when op...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:246:6:
+      246 │       expect(component.explicationAccordionDisponible).toBe(true);
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:249:4:
+      249 │     it('should handle service error gracefully', () => {
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:255:6:
+      255 │       expect(component.panneauOuvertId).toBe('CTR-001');
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:256:6:
+      256 │       expect(component.erreurAccordion).toBe('Service error');
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.spec.ts:257:6:
+      257 │       expect(component.chargementAccordion).toBe(false);
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2872: This kind of expression is always truthy. [plugin angular-compiler]
+
+    src/app/pages/dashboard/dashboard.component.ts:88:19:
+      88 │     let contrats = [...(this.statistiques as any).top10] || [];
+         ╵                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'feature' does not exist on type 'string'. [plugin angular-compiler]
+
+    src/app/pages/scoring-contrat/scoring-contrat.component.html:84:43:
+      84 │ ...strong>{{ getFeatureLabel(f.feature) }}</strong><span *ngIf="!l...
+         ╵                                ~~~~~~~
+
+  Error occurs in the template of component ScoringContratComponent.
+
+    src/app/pages/scoring-contrat/scoring-contrat.component.ts:38:15:
+      38 │   templateUrl: './scoring-contrat.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'feature' does not exist on type 'string'. [plugin angular-compiler]
+
+    src/app/pages/scoring-contrat/scoring-contrat.component.html:94:68:
+      94 │ ...class="facteur-name">{{ getFeatureLabel(facteur.feature) }}</span>
+         ╵                                                    ~~~~~~~
+
+  Error occurs in the template of component ScoringContratComponent.
+
+    src/app/pages/scoring-contrat/scoring-contrat.component.ts:38:15:
+      38 │   templateUrl: './scoring-contrat.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'contribution' does not exist on type 'string'. [plugin angular-compiler]
+
+    src/app/pages/scoring-contrat/scoring-contrat.component.html:96:60:
+      96 │ ...[class.positive]="facteur.contribution > 0" [class.negative]="f...
+         ╵                              ~~~~~~~~~~~~
+
+  Error occurs in the template of component ScoringContratComponent.
+
+    src/app/pages/scoring-contrat/scoring-contrat.component.ts:38:15:
+      38 │   templateUrl: './scoring-contrat.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'contribution' does not exist on type 'string'. [plugin angular-compiler]
+
+    src/app/pages/scoring-contrat/scoring-contrat.component.html:96:104:
+      96 │ ...teur.contribution > 0" [class.negative]="facteur.contribution < 0"
+         ╵                                                     ~~~~~~~~~~~~
+
+  Error occurs in the template of component ScoringContratComponent.
+
+    src/app/pages/scoring-contrat/scoring-contrat.component.ts:38:15:
+      38 │   templateUrl: './scoring-contrat.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'contribution' does not exist on type 'string'. [plugin angular-compiler]
+
+    src/app/pages/scoring-contrat/scoring-contrat.component.html:97:59:
+      97 │ ...       [style.width.%]="getBarWidth(facteur.contribution)"></span>
+         ╵                                                ~~~~~~~~~~~~
+
+  Error occurs in the template of component ScoringContratComponent.
+
+    src/app/pages/scoring-contrat/scoring-contrat.component.ts:38:15:
+      38 │   templateUrl: './scoring-contrat.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'contribution' does not exist on type 'string'. [plugin angular-compiler]
+
+    src/app/pages/scoring-contrat/scoring-contrat.component.html:99:68:
+      99 │ ...[class.positive]="facteur.contribution > 0" [class.negative]="f...
+         ╵                              ~~~~~~~~~~~~
+
+  Error occurs in the template of component ScoringContratComponent.
+
+    src/app/pages/scoring-contrat/scoring-contrat.component.ts:38:15:
+      38 │   templateUrl: './scoring-contrat.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'contribution' does not exist on type 'string'. [plugin angular-compiler]
+
+    src/app/pages/scoring-contrat/scoring-contrat.component.html:99:112:
+      99 │ ...eur.contribution > 0" [class.negative]="facteur.contribution < 0">
+         ╵                                                    ~~~~~~~~~~~~
+
+  Error occurs in the template of component ScoringContratComponent.
+
+    src/app/pages/scoring-contrat/scoring-contrat.component.ts:38:15:
+      38 │   templateUrl: './scoring-contrat.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'contribution' does not exist on type 'string'. [plugin angular-compiler]
+
+    src/app/pages/scoring-contrat/scoring-contrat.component.html:100:27:
+      100 │                 {{ facteur.contribution > 0 ? '+' : '' }}{{ facte...
+          ╵                            ~~~~~~~~~~~~
+
+  Error occurs in the template of component ScoringContratComponent.
+
+    src/app/pages/scoring-contrat/scoring-contrat.component.ts:38:15:
+      38 │   templateUrl: './scoring-contrat.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'contribution' does not exist on type 'string'. [plugin angular-compiler]
+
+    src/app/pages/scoring-contrat/scoring-contrat.component.html:100:68:
+      100 │ ...ntribution > 0 ? '+' : '' }}{{ facteur.contribution.toFixed(4) }}
+          ╵                                           ~~~~~~~~~~~~
+
+  Error occurs in the template of component ScoringContratComponent.
+
+    src/app/pages/scoring-contrat/scoring-contrat.component.ts:38:15:
+      38 │   templateUrl: './scoring-contrat.component.html',
+         ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:17:0:
+      17 │ describe('ExplicabiliteService', () => {
+         ╵ ~~~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'beforeEach'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:23:2:
+      23 │   beforeEach(() => {
+         ╵   ~~~~~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'jasmine'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:25:11:
+      25 │       get: jasmine.createSpy('get')
+         ╵            ~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:34:2:
+      34 │   describe('getExplicationContrat()', () => {
+         ╵   ~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:46:4:
+      46 │     it('should call the correct URL with the contrat ID', () => {
+         ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:52:6:
+      52 │       expect(mockHttpClient.get).toHaveBeenCalledWith(
+         ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:57:4:
+      57 │     it('should return the explication response correctly', () => {
+         ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:62:8:
+      62 │         expect(result).toEqual(mockExplication);
+         ╵         ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:63:8:
+      63 │         expect(result.contrat_id).toBe('CTR-12345');
+         ╵         ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:64:8:
+      64 │         expect(result.facteurs_explicatifs.length).toBe(2);
+         ╵         ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:65:8:
+      65 │         expect(result.explication_disponible).toBe(true);
+         ╵         ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:69:4:
+      69 │     it('should propagate errors for retry button UI (Req 7.2)', ()...
+         ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:80:10:
+      80 │           expect(error.message).toBeDefined();
+         ╵           ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:81:10:
+      81 │           expect(error.status).toBe(500);
+         ╵           ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:90:2:
+      90 │   describe('getMoyennesPortefeuille()', () => {
+         ╵   ~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:104:4:
+      104 │     it('should call the correct URL', () => {
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:109:6:
+      109 │       expect(mockHttpClient.get).toHaveBeenCalledWith(
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:114:4:
+      114 │     it('should return the moyennes response correctly', () => {
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:118:8:
+      118 │         expect(result).toEqual(mockMoyennes);
+          ╵         ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:119:8:
+      119 │         expect(result.nombre_contrats).toBe(12500);
+          ╵         ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:120:8:
+      120 │         expect(result.moyennes['ratio_rachats_primes']).toBe(0.3);
+          ╵         ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:124:4:
+      124 │     it('should use shareReplay cache - multiple subscriptions tri...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:129:8:
+      129 │         expect(result).toEqual(mockMoyennes);
+          ╵         ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:134:8:
+      134 │         expect(result).toEqual(mockMoyennes);
+          ╵         ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:138:6:
+      138 │       expect(mockHttpClient.get).toHaveBeenCalledTimes(1);
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:141:4:
+      141 │     it('should propagate errors for "Comparaison non disponible" ...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:151:10:
+      151 │           expect(error.message).toBeDefined();
+          ╵           ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:152:10:
+      152 │           expect(error.status).toBe(503);
+          ╵           ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:161:2:
+      161 │   describe('Error handling', () => {
+          ╵   ~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:163:4:
+      163 │     it('should return proper message for 404 error', () => {
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:173:10:
+      173 │           expect(error.message).toBe('Contrat non trouvé ou non ...
+          ╵           ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:174:10:
+      174 │           expect(error.status).toBe(404);
+          ╵           ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:179:4:
+      179 │     it('should return proper message for 503 error', () => {
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:189:10:
+      189 │           expect(error.message).toBe("Le service d'explicabilité...
+          ╵           ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:190:10:
+      190 │           expect(error.status).toBe(503);
+          ╵           ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:195:4:
+      195 │     it('should return proper message for network error (status 0)...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:206:10:
+      206 │           expect(error.message).toBe('Service indisponible. Véri...
+          ╵           ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/services/explicabilite.service.spec.ts:207:10:
+      207 │           expect(error.status).toBe(0);
+          ╵           ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/dictionnaire-variables-fallback.property.spec.ts:13:0:
+      13 │ describe('Property 8: Formatage fallback des noms inconnus', () => {
+         ╵ ~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/dictionnaire-variables-fallback.property.spec.ts:30:2:
+      30 │   it('should replace all underscores with spaces', () => {
+         ╵   ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/dictionnaire-variables-fallback.property.spec.ts:34:8:
+      34 │         expect(result).not.toContain('_');
+         ╵         ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/dictionnaire-variables-fallback.property.spec.ts:40:2:
+      40 │   it('should capitalize the first character', () => {
+         ╵   ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/dictionnaire-variables-fallback.property.spec.ts:45:10:
+      45 │           expect(result[0]).toBe(result[0].toUpperCase());
+         ╵           ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/dictionnaire-variables-fallback.property.spec.ts:52:2:
+      52 │   it('should equal the expected fallback transformation', () => {
+         ╵   ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/dictionnaire-variables-fallback.property.spec.ts:59:8:
+      59 │         expect(result).toBe(expected);
+         ╵         ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/dictionnaire-variables.property.spec.ts:15:0:
+      15 │ describe('Property 7: Correspondance dictionnaire des noms de vari...
+         ╵ ~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/dictionnaire-variables.property.spec.ts:18:2:
+      18 │   it('getLibelleVariable retourne le libellé français correspond...
+         ╵   ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/dictionnaire-variables.property.spec.ts:24:10:
+      24 │           expect(result).toBe(DICTIONNAIRE_VARIABLES[nomTechnique]);
+         ╵           ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication-couleur.property.spec.ts:15:0:
+      15 │ describe('Property 4: Mapping couleur/direction depuis le signe SH...
+         ╵ ~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication-couleur.property.spec.ts:43:2:
+      43 │   it('shap_value > 0 → couleurBarre === "rouge" et directionBarr...
+         ╵   ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication-couleur.property.spec.ts:48:8:
+      48 │         expect(result.couleurBarre).toBe('rouge');
+         ╵         ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication-couleur.property.spec.ts:49:8:
+      49 │         expect(result.directionBarre).toBe('droite');
+         ╵         ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication-couleur.property.spec.ts:55:2:
+      55 │   it('shap_value < 0 → couleurBarre === "vert" et directionBarre...
+         ╵   ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication-couleur.property.spec.ts:60:8:
+      60 │         expect(result.couleurBarre).toBe('vert');
+         ╵         ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication-couleur.property.spec.ts:61:8:
+      61 │         expect(result.directionBarre).toBe('gauche');
+         ╵         ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication-indicateur.property.spec.ts:33:0:
+      33 │ describe('Property 5: Indicateur visuel de comparaison avec la moy...
+         ╵ ~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication-indicateur.property.spec.ts:35:2:
+      35 │   it('shap_value > 0 et valeur_contrat > moyenne_portefeuille → ...
+         ╵   ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication-indicateur.property.spec.ts:53:10:
+      53 │           expect(result).toBe('fleche-rouge-haut');
+         ╵           ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication-indicateur.property.spec.ts:60:2:
+      60 │   it('shap_value > 0 et valeur_contrat < moyenne_portefeuille → ...
+         ╵   ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication-indicateur.property.spec.ts:78:10:
+      78 │           expect(result).toBe('fleche-verte-bas');
+         ╵           ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication-indicateur.property.spec.ts:85:2:
+      85 │   it('shap_value <= 0 → indicateur null (pas d indicateur pour c...
+         ╵   ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication-indicateur.property.spec.ts:100:10:
+      100 │           expect(result).toBeNull();
+          ╵           ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication-indicateur.property.spec.ts:107:2:
+      107 │   it('shap_value > 0 et valeur_contrat === moyenne_portefeuille �...
+          ╵   ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication-indicateur.property.spec.ts:121:10:
+      121 │           expect(result).toBeNull();
+          ╵           ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:13:0:
+      13 │ describe('PanneauExplicationComponent', () => {
+         ╵ ~~~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'beforeEach'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:16:2:
+      16 │   beforeEach(() => {
+         ╵   ~~~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:23:2:
+      23 │   it('should create the component instance', () => {
+         ╵   ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:24:4:
+      24 │     expect(component).toBeTruthy();
+         ╵     ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:25:4:
+      25 │     expect(component.facteurs).toEqual([]);
+         ╵     ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:26:4:
+      26 │     expect(component.facteursAffiches).toEqual([]);
+         ╵     ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:27:4:
+      27 │     expect(component.chargement).toBe(false);
+         ╵     ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:28:4:
+      28 │     expect(component.erreur).toBeNull();
+         ╵     ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:29:4:
+      29 │     expect(component.explicationDisponible).toBe(true);
+         ╵     ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:35:2:
+      35 │   describe('Loading state', () => {
+         ╵   ~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:36:4:
+      36 │     it('should expose chargement=true for spinner display', () => {
+         ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:38:6:
+      38 │       expect(component.chargement).toBe(true);
+         ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:41:4:
+      41 │     it('should not process facteurs when chargement is active (no ...
+         ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:45:6:
+      45 │       expect(component.facteursAffiches).toEqual([]);
+         ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:52:2:
+      52 │   describe('Error state', () => {
+         ╵   ~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:53:4:
+      53 │     it('should expose the error message for display', () => {
+         ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:55:6:
+      55 │       expect(component.erreur).toBe('Impossible de charger l\'expl...
+         ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:58:4:
+      58 │     it('should emit reessayer event when onReessayer is called', (...
+         ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'spyOn'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:59:6:
+      59 │       spyOn(component.reessayer, 'emit');
+         ╵       ~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:61:6:
+      61 │       expect(component.reessayer.emit).toHaveBeenCalledTimes(1);
+         ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:68:2:
+      68 │   describe('Unavailable state', () => {
+         ╵   ~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:69:4:
+      69 │     it('should expose explicationDisponible=false for "non disponi...
+         ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:71:6:
+      71 │       expect(component.explicationDisponible).toBe(false);
+         ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:74:4:
+      74 │     it('should not generate facteursAffiches when facteurs is empt...
+         ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:78:6:
+      78 │       expect(component.facteursAffiches).toEqual([]);
+         ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:85:2:
+      85 │   describe('Bar rendering - couleurs and directions', () => {
+         ╵   ~~~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'beforeEach'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:92:4:
+      92 │     beforeEach(() => {
+         ╵     ~~~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:97:4:
+      97 │     it('should generate facteursAffiches for each input facteur', ...
+         ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:98:6:
+      98 │       expect(component.facteursAffiches.length).toBe(3);
+         ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:101:4:
+      101 │     it('should assign couleurBarre=rouge and directionBarre=droit...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:103:6:
+      103 │       expect(positiveFacteur.couleurBarre).toBe('rouge');
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:104:6:
+      104 │       expect(positiveFacteur.directionBarre).toBe('droite');
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:107:4:
+      107 │     it('should assign couleurBarre=vert and directionBarre=gauche...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:109:6:
+      109 │       expect(negativeFacteur.couleurBarre).toBe('vert');
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:110:6:
+      110 │       expect(negativeFacteur.directionBarre).toBe('gauche');
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:113:4:
+      113 │     it('should apply barre-rouge/direction-droite for all positiv...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:116:8:
+      116 │         expect(f.directionBarre).toBe('droite');
+          ╵         ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:120:4:
+      120 │     it('should assign correct libellés from dictionnaire', () => {
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:121:6:
+      121 │       expect(component.facteursAffiches[0].libelle).toBe('Ratio r...
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:122:6:
+      122 │       expect(component.facteursAffiches[1].libelle).toBe('Nb aven...
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:123:6:
+      123 │       expect(component.facteursAffiches[2].libelle).toBe('Total r...
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:130:2:
+      130 │   describe('Proportional widths', () => {
+          ╵   ~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:131:4:
+      131 │     it('should set bar widths proportional to |shap_value| relati...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:143:6:
+      143 │       expect(component.facteursAffiches[0].largeurBarre).toBe(100);
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:144:6:
+      144 │       expect(component.facteursAffiches[1].largeurBarre).toBe(50);
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:145:6:
+      145 │       expect(component.facteursAffiches[2].largeurBarre).toBe(25);
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:148:4:
+      148 │     it('should handle all zero shap_values gracefully (width=0)',...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:154:6:
+      154 │       expect(component.facteursAffiches[0].largeurBarre).toBe(0);
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:157:4:
+      157 │     it('should handle single facteur (width=100%)', () => {
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:163:6:
+      163 │       expect(component.facteursAffiches[0].largeurBarre).toBe(100);
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:166:4:
+      166 │     it('should produce widths between 0 and 100 inclusive', () => {
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:175:8:
+      175 │         expect(f.largeurBarre).toBeGreaterThanOrEqual(0);
+          ╵         ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:176:8:
+      176 │         expect(f.largeurBarre).toBeLessThanOrEqual(100);
+          ╵         ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:184:2:
+      184 │   describe('Comparative table', () => {
+          ╵   ~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:185:4:
+      185 │     it('should include variable name (libelle), contract value, a...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:198:6:
+      198 │       expect(component.facteursAffiches[0].libelle).toBe('Ratio r...
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:199:6:
+      199 │       expect(component.facteursAffiches[0].valeur_contrat).toBe(0...
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:200:6:
+      200 │       expect(component.facteursAffiches[0].moyenne_portefeuille)....
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:202:6:
+      202 │       expect(component.facteursAffiches[1].libelle).toBe('Durée ...
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:203:6:
+      203 │       expect(component.facteursAffiches[1].valeur_contrat).toBe(3);
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:204:6:
+      204 │       expect(component.facteursAffiches[1].moyenne_portefeuille)....
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:207:4:
+      207 │     it('should expose moyennes=null for "Comparaison non disponib...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:209:6:
+      209 │       expect(component.moyennes).toBeNull();
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:216:2:
+      216 │   describe('Retry button (reessayer event)', () => {
+          ╵   ~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:217:4:
+      217 │     it('should emit reessayer event via onReessayer()', () => {
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'spyOn'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:218:6:
+      218 │       spyOn(component.reessayer, 'emit');
+          ╵       ~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:220:6:
+      220 │       expect(component.reessayer.emit).toHaveBeenCalledTimes(1);
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:223:4:
+      223 │     it('should not emit any value (void event)', () => {
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'spyOn'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:224:6:
+      224 │       spyOn(component.reessayer, 'emit');
+          ╵       ~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:226:6:
+      226 │       expect(component.reessayer.emit).toHaveBeenCalledWith();
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:233:2:
+      233 │   describe('Indicators', () => {
+          ╵   ~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:234:4:
+      234 │     it('should return fleche-rouge-haut when shap > 0 and valeur ...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:241:6:
+      241 │       expect(component.getIndicateur(facteur)).toBe('fleche-rouge...
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:244:4:
+      244 │     it('should return fleche-verte-bas when shap > 0 and valeur <...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:251:6:
+      251 │       expect(component.getIndicateur(facteur)).toBe('fleche-verte...
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:254:4:
+      254 │     it('should return null when shap <= 0 (no indicator for negat...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:261:6:
+      261 │       expect(component.getIndicateur(facteur)).toBeNull();
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:264:4:
+      264 │     it('should return null when shap > 0 but valeur equals moyenn...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:271:6:
+      271 │       expect(component.getIndicateur(facteur)).toBeNull();
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:274:4:
+      274 │     it('should return null when shap = 0 (zero contribution)', ()...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:281:6:
+      281 │       expect(component.getIndicateur(facteur)).toBeNull();
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:284:4:
+      284 │     it('should set correct indicators in facteursAffiches via ngO...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:293:6:
+      293 │       expect(component.facteursAffiches[0].indicateur).toBe('flec...
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:294:6:
+      294 │       expect(component.facteursAffiches[1].indicateur).toBe('flec...
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:295:6:
+      295 │       expect(component.facteursAffiches[2].indicateur).toBeNull();
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:296:6:
+      296 │       expect(component.facteursAffiches[3].indicateur).toBeNull();
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:303:2:
+      303 │   describe('Edge cases', () => {
+          ╵   ~~~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:304:4:
+      304 │     it('should clear facteursAffiches when facteurs is empty', ()...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:309:6:
+      309 │       expect(component.facteursAffiches.length).toBe(1);
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:314:6:
+      314 │       expect(component.facteursAffiches).toEqual([]);
+          ╵       ~~~~~~
+
+
+X [ERROR] TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:317:4:
+      317 │     it('should use fallback libelle for unknown variable names', ...
+          ╵     ~~
+
+
+X [ERROR] TS2304: Cannot find name 'expect'. [plugin angular-compiler]
+
+    src/app/shared/panneau-explication/panneau-explication.component.spec.ts:324:6:
+      324 │       expect(component.facteursAffiches[0].libelle).toBe('Some un...
+          ╵       ~~~~~~
+
+
+

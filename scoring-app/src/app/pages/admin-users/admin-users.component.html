@@ -1,0 +1,118 @@
+<div class="admin-users-container">
+  <div class="header-section">
+    <h2>Gestion des utilisateurs</h2>
+    <button mat-raised-button color="primary" (click)="ouvrirFormulaireCreation()" [disabled]="formulaireOuvert">
+      <mat-icon>person_add</mat-icon>
+      Nouvel utilisateur
+    </button>
+  </div>
+
+  <!-- Formulaire création/édition -->
+  <mat-card class="form-card" *ngIf="formulaireOuvert">
+    <mat-card-header>
+      <mat-card-title>{{ modeEdition ? 'Modifier' : 'Créer' }} un utilisateur</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (ngSubmit)="enregistrer()">
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Nom</mat-label>
+          <input matInput [(ngModel)]="formNom" name="nom" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" [(ngModel)]="formEmail" name="email"
+                 [disabled]="modeEdition" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>{{ modeEdition ? 'Nouveau mot de passe (laisser vide pour ne pas changer)' : 'Mot de passe' }}</mat-label>
+          <input matInput type="password" [(ngModel)]="formPassword" name="password"
+                 [required]="!modeEdition">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Rôle</mat-label>
+          <mat-select [(ngModel)]="formRole" name="role" required>
+            <mat-option value="GESTIONNAIRE">Gestionnaire</mat-option>
+            <mat-option value="ADMIN">Administrateur</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div class="error-section" *ngIf="erreurFormulaire">
+          <mat-icon>error_outline</mat-icon>
+          <span>{{ erreurFormulaire }}</span>
+        </div>
+
+        <div class="form-actions">
+          <button mat-button type="button" (click)="fermerFormulaire()" [disabled]="enregistrementEnCours">
+            Annuler
+          </button>
+          <button mat-raised-button color="primary" type="submit" [disabled]="enregistrementEnCours">
+            <mat-spinner *ngIf="enregistrementEnCours" diameter="18" class="button-spinner"></mat-spinner>
+            <span *ngIf="!enregistrementEnCours">{{ modeEdition ? 'Enregistrer' : 'Créer' }}</span>
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Chargement -->
+  <div class="loading-section" *ngIf="chargement">
+    <mat-spinner diameter="48"></mat-spinner>
+  </div>
+
+  <!-- Erreur -->
+  <div class="error-section" *ngIf="erreur && !chargement">
+    <mat-icon>error_outline</mat-icon>
+    <span>{{ erreur }}</span>
+    <button mat-button color="primary" (click)="chargerUtilisateurs()">Réessayer</button>
+  </div>
+
+  <!-- Tableau -->
+  <table mat-table [dataSource]="utilisateurs" class="users-table" *ngIf="!chargement && !erreur">
+    <ng-container matColumnDef="nom">
+      <th mat-header-cell *matHeaderCellDef>Nom</th>
+      <td mat-cell *matCellDef="let u">{{ u.nom }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let u">{{ u.email }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="role">
+      <th mat-header-cell *matHeaderCellDef>Rôle</th>
+      <td mat-cell *matCellDef="let u">
+        <span class="role-badge" [class.role-admin]="u.role === 'ADMIN'">{{ u.role }}</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actif">
+      <th mat-header-cell *matHeaderCellDef>Statut</th>
+      <td mat-cell *matCellDef="let u">
+        <span class="statut-badge" [class.statut-actif]="u.actif" [class.statut-inactif]="!u.actif">
+          {{ u.actif ? 'Actif' : 'Désactivé' }}
+        </span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let u">
+        <button mat-icon-button (click)="ouvrirFormulaireEdition(u)" aria-label="Modifier" title="Modifier">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="basculerActivation(u)"
+                [disabled]="u.user_id === monPropreId"
+                [attr.aria-label]="u.actif ? 'Désactiver' : 'Réactiver'"
+                [attr.title]="u.user_id === monPropreId ? 'Impossible de modifier son propre compte' : (u.actif ? 'Désactiver' : 'Réactiver')">
+          <mat-icon>{{ u.actif ? 'block' : 'check_circle' }}</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="colonnes"></tr>
+    <tr mat-row *matRowDef="let row; columns: colonnes;"></tr>
+  </table>
+</div>

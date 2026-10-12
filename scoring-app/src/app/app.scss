@@ -1,0 +1,99 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #1976d2;
+  color: white;
+}
+
+.toolbar-title {
+  margin-left: 8px;
+  font-size: 1.2rem;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar-user {
+  margin-right: 8px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.sidenav-container {
+  flex: 1;
+  margin-top: 64px;
+}
+
+.app-sidenav {
+  width: 240px;
+  background-color: #f0f4f8;
+}
+
+.main-content {
+  padding: 24px;
+}
+
+.active-link {
+  background-color: rgba(25, 118, 210, 0.12) !important;
+  font-weight: 500;
+  color: #1976d2 !important;
+}
+
+// Bannière Modèle non disponible (503)
+.banniere-modele-indisponible {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background-color: #ff9800;
+  color: white;
+  font-weight: 500;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+
+  mat-icon {
+    font-size: 24px;
+  }
+}
+
+// Bannière Service indisponible
+.banniere-service-indisponible {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background-color: #f44336;
+  color: white;
+  font-weight: 500;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+
+  mat-icon {
+    font-size: 24px;
+  }
+
+  .btn-reessayer {
+    margin-left: auto;
+  }
+}
+
+// Ajuster le container quand la bannière est visible
+.sidenav-container.has-banner {
+  margin-top: 112px;
+}

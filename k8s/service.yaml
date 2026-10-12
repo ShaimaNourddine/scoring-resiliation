@@ -1,0 +1,41 @@
+# ============================================================
+# Services — exposition interne des pods
+# ============================================================
+
+# Service API (ClusterIP : interne uniquement, exposé via Ingress)
+apiVersion: v1
+kind: Service
+metadata:
+  name: scoring-api-svc
+  namespace: scoring
+  labels:
+    app: scoring-api
+spec:
+  selector:
+    app: scoring-api
+  ports:
+    - name: http
+      protocol: TCP
+      port: 8000
+      targetPort: 8000
+  type: ClusterIP
+
+---
+
+# Service Frontend (ClusterIP : interne uniquement, exposé via Ingress)
+apiVersion: v1
+kind: Service
+metadata:
+  name: scoring-frontend-svc
+  namespace: scoring
+  labels:
+    app: scoring-frontend
+spec:
+  selector:
+    app: scoring-frontend
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP

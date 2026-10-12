@@ -1,0 +1,15 @@
+# ============================================================
+# ConfigMap — configuration non sensible de l'API
+# ============================================================
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: scoring-api-config
+  namespace: scoring
+  labels:
+    app: scoring-api
+data:
+  LOG_LEVEL: "info"
+  PYTHONUNBUFFERED: "1"
+  PORT: "8000"
+  WORKERS: "2"

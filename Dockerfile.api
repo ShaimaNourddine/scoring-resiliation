@@ -1,0 +1,89 @@
+# ============================================================
+# Dockerfile — API FastAPI (scoring résiliation)
+# Contexte de build : racine du projet MasteriDOTNET/
+#   docker build -f Dockerfile.api -t scoring-api .
+#
+# Multi-stage :
+#   Stage 1 (builder) : installe les dépendances Python
+#   Stage 2 (runtime) : image allégée sans outils de build
+# ============================================================
+
+# ---- Stage 1 : builder ----
+FROM python:3.11-slim AS builder
+
+WORKDIR /build
+
+# Dépendances système pour oracledb (remplace cx_Oracle depuis Python 3.11)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libaio1 \
+    wget \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copier requirements et installer dans un répertoire isolé
+COPY requirements.txt .
+RUN pip install --upgrade pip && \
+    pip install --prefix=/install --no-cache-dir -r requirements.txt
+
+# ---- Stage 2 : runtime ----
+FROM python:3.11-slim AS runtime
+
+WORKDIR /app
+
+# Runtime Oracle (libaio requis par oracledb en mode thick)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libaio1 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copier les packages installés depuis le builder
+COPY --from=builder /install /usr/local
+
+# ---------------------------------------------------------------
+# Copier les fichiers Python de l'API (tous dans api/)
+# ---------------------------------------------------------------
+COPY api/04_serve_api.py           ./04_serve_api.py
+COPY api/oracle_connector.py       ./oracle_connector.py
+COPY api/shap_calculator.py        ./shap_calculator.py
+COPY api/cache_moyennes.py         ./cache_moyennes.py
+COPY api/realtime_preprocessor.py  ./realtime_preprocessor.py
+COPY api/auth.py                   ./auth.py
+COPY api/motif_groups.py           ./motif_groups.py
+COPY api/profession_utils.py       ./profession_utils.py
+COPY api/features_list.txt         ./features_list.txt
+COPY api/best_model_xgboost.json   ./best_model_xgboost.json
+
+# ---------------------------------------------------------------
+# Artefacts ML (sous-dossier artifacts/ dans api/)
+# Contient : scaler.pkl, label_encoders.pkl, target_encodings.pkl,
+#            frequency_encodings.pkl, medianes.pkl, global_mean.pkl,
+#            onehot_categories.pkl, outlier_thresholds.pkl,
+#            pays_regroupement.pkl
+# ---------------------------------------------------------------
+COPY api/artifacts/ ./artifacts/
+
+# ---------------------------------------------------------------
+# Variables d'environnement
+# Toutes les valeurs sensibles sont surchargées via --env-file .env
+# ---------------------------------------------------------------
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PORT=8000
+
+# Utilisateur non-root (sécurité)
+RUN useradd -m -u 1001 appuser && chown -R appuser:appuser /app
+USER appuser
+
+EXPOSE 8000
+
+# Healthcheck : appelle /health pour vérifier que l'API répond
+HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')" || exit 1
+
+# Point d'entrée : le fichier s'appelle 04_serve_api mais le module Python
+# doit être référencé sans le préfixe numérique → on utilise importlib
+CMD ["python", "-c", \
+     "import uvicorn, importlib.util; \
+      spec = importlib.util.spec_from_file_location('serve_api', '04_serve_api.py'); \
+      mod = importlib.util.module_from_spec(spec); \
+      spec.loader.exec_module(mod); \
+      uvicorn.run(mod.app, host='0.0.0.0', port=8000, workers=2)"]

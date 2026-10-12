@@ -1,0 +1,160 @@
+.panneau-explication {
+  padding: 16px;
+}
+
+// États : chargement, erreur, indisponible
+.etat-chargement,
+.etat-erreur,
+.etat-indisponible {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  text-align: center;
+
+  p {
+    margin: 0;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+  }
+
+  mat-icon {
+    font-size: 36px;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.etat-erreur {
+  mat-icon {
+    color: #f44336;
+  }
+}
+
+.etat-indisponible {
+  mat-icon {
+    color: #ff9800;
+  }
+}
+
+// Contenu principal
+.contenu-explication {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+// Barres SHAP
+.barres-shap {
+  h4 {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.87);
+  }
+}
+
+.barre-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.barre-libelle {
+  min-width: 180px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.7);
+  text-align: right;
+}
+
+.barre-container {
+  flex: 1;
+  height: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.barre {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.barre-rouge {
+  background-color: #f44336;
+}
+
+.barre-vert {
+  background-color: #4caf50;
+}
+
+.direction-droite {
+  margin-left: 0;
+}
+
+.direction-gauche {
+  margin-left: auto;
+}
+
+// Tableau comparatif
+.tableau-comparatif {
+  h4 {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.87);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+
+    th, td {
+      padding: 8px 12px;
+      text-align: left;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    th {
+      font-weight: 500;
+      color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+
+    td {
+      color: rgba(0, 0, 0, 0.87);
+    }
+  }
+}
+
+.valeur-cellule {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.indicateur-rouge {
+  color: #f44336;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+.indicateur-vert {
+  color: #4caf50;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+.avertissement-moyennes {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #ff9800;
+  font-style: italic;
+}

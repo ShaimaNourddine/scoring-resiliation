@@ -1,0 +1,10 @@
+# ============================================================
+# Namespace — isolation de l'application scoring
+# ============================================================
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: scoring
+  labels:
+    app.kubernetes.io/name: scoring-resiliation
+    app.kubernetes.io/managed-by: kubectl

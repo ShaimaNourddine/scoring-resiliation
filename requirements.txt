@@ -1,0 +1,29 @@
+# ============================================================
+# requirements.txt — API FastAPI scoring résiliation
+# Versions épinglées pour la reproductibilité
+# ============================================================
+
+# --- API FastAPI ---
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+python-multipart==0.0.12
+pydantic==2.9.2
+
+# --- Authentification JWT ---
+python-jose[cryptography]==3.3.0
+bcrypt==4.2.1
+passlib[bcrypt]==1.7.4
+
+# --- Oracle (oracledb remplace cx_Oracle pour Python 3.11+) ---
+oracledb==2.4.1
+
+# --- ML / XGBoost / SHAP ---
+xgboost==2.1.1
+shap==0.46.0
+mlflow==2.17.0
+scikit-learn==1.5.2
+numpy==1.26.4
+pandas==2.2.3
+
+# --- Utilitaires ---
+python-dotenv==1.0.1

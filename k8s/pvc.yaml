@@ -1,0 +1,19 @@
+# ============================================================
+# PersistentVolumeClaim — stockage du modèle ML XGBoost
+# Le modèle est chargé depuis ce volume au démarrage de l'API
+# ============================================================
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: model-pvc
+  namespace: scoring
+  labels:
+    app: scoring-api
+spec:
+  accessModes:
+    - ReadOnlyMany        # Plusieurs pods lisent le même volume
+  resources:
+    requests:
+      storage: 500Mi
+  # storageClassName: gp2   # AWS EBS (décommenter pour EKS)
+  storageClassName: standard  # kind / minikube
