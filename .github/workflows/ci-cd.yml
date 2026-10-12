@@ -239,15 +239,17 @@ jobs:
 
       - name: Charger les images dans kind
         run: |
-          docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_API }}:latest
-          docker pull ${{ env.REGISTRY }}/${{ env.IMAGE_FRONTEND }}:latest
-          kind load docker-image ${{ env.REGISTRY }}/${{ env.IMAGE_API }}:latest --name scoring-ci
-          kind load docker-image ${{ env.REGISTRY }}/${{ env.IMAGE_FRONTEND }}:latest --name scoring-ci
+          OWNER_LC=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          docker pull ${{ env.REGISTRY }}/${OWNER_LC}/scoring-api:latest
+          docker pull ${{ env.REGISTRY }}/${OWNER_LC}/scoring-frontend:latest
+          kind load docker-image ${{ env.REGISTRY }}/${OWNER_LC}/scoring-api:latest --name scoring-ci
+          kind load docker-image ${{ env.REGISTRY }}/${OWNER_LC}/scoring-frontend:latest --name scoring-ci
 
       - name: Mettre à jour les tags d'image dans les manifests
         run: |
-          sed -i "s|scoring-api:latest|${{ env.REGISTRY }}/${{ env.IMAGE_API }}:latest|g" k8s/deployment-api.yaml
-          sed -i "s|scoring-frontend:latest|${{ env.REGISTRY }}/${{ env.IMAGE_FRONTEND }}:latest|g" k8s/deployment-frontend.yaml
+          OWNER_LC=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          sed -i "s|scoring-api:latest|${{ env.REGISTRY }}/${OWNER_LC}/scoring-api:latest|g" k8s/deployment-api.yaml
+          sed -i "s|scoring-frontend:latest|${{ env.REGISTRY }}/${OWNER_LC}/scoring-frontend:latest|g" k8s/deployment-frontend.yaml
 
       - name: Appliquer les manifests Kubernetes
         run: |
