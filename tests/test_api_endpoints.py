@@ -77,7 +77,7 @@ def client():
             import importlib.util
             spec = importlib.util.spec_from_file_location(
                 "serve_api",
-                str(Path(__file__).parent.parent / "04_serve_api.py")
+                str(Path(__file__).parent.parent / "api" / "04_serve_api.py")
             )
             serve_api = importlib.util.module_from_spec(spec)
 
@@ -108,7 +108,7 @@ def client_no_model():
             import importlib.util
             spec = importlib.util.spec_from_file_location(
                 "serve_api_no_model",
-                str(Path(__file__).parent.parent / "04_serve_api.py")
+                str(Path(__file__).parent.parent / "api" / "04_serve_api.py")
             )
             serve_api = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(serve_api)
