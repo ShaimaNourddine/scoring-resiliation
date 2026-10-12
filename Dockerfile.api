@@ -54,12 +54,11 @@ COPY api/best_model_xgboost.json   ./best_model_xgboost.json
 
 # ---------------------------------------------------------------
 # Artefacts ML (sous-dossier artifacts/ dans api/)
-# Contient : scaler.pkl, label_encoders.pkl, target_encodings.pkl,
-#            frequency_encodings.pkl, medianes.pkl, global_mean.pkl,
-#            onehot_categories.pkl, outlier_thresholds.pkl,
-#            pays_regroupement.pkl
+# En production : monter le volume depuis l'hôte
+#   docker run -v ./api/artifacts:/app/artifacts:ro ...
+# En CI : le dossier est créé vide (les .pkl ne sont pas dans le repo)
 # ---------------------------------------------------------------
-COPY api/artifacts/ ./artifacts/
+RUN mkdir -p ./artifacts
 
 # ---------------------------------------------------------------
 # Variables d'environnement
