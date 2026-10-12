@@ -6,6 +6,9 @@
 # Multi-stage :
 #   Stage 1 (builder) : installe les dépendances Python
 #   Stage 2 (runtime) : image allégée sans outils de build
+#
+# Note : oracledb est utilisé en mode THIN (pas de client Oracle).
+# libaio n'est donc pas nécessaire.
 # ============================================================
 
 # ---- Stage 1 : builder ----
@@ -13,11 +16,10 @@ FROM python:3.11-slim AS builder
 
 WORKDIR /build
 
-# Dépendances système pour oracledb (remplace cx_Oracle depuis Python 3.11)
+# Dépendances système pour compiler certains packages Python (ex: bcrypt)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
-    libaio1 \
-    wget \
+    gcc \
     && rm -rf /var/lib/apt/lists/*
 
 # Copier requirements et installer dans un répertoire isolé
@@ -30,10 +32,7 @@ FROM python:3.11-slim AS runtime
 
 WORKDIR /app
 
-# Runtime Oracle (libaio requis par oracledb en mode thick)
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    libaio1 \
-    && rm -rf /var/lib/apt/lists/*
+# Aucune dépendance système requise en mode thin oracledb
 
 # Copier les packages installés depuis le builder
 COPY --from=builder /install /usr/local
