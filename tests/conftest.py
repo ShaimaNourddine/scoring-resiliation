@@ -2,5 +2,9 @@
 import sys
 from pathlib import Path
 
-# Ajouter le répertoire racine du projet au path pour importer shap_calculator
-sys.path.insert(0, str(Path(__file__).parent.parent))
+# Racine du projet
+root = Path(__file__).parent.parent
+sys.path.insert(0, str(root))
+
+# Dossier api/ (contient shap_calculator, oracle_connector, auth, etc.)
+sys.path.insert(0, str(root / "api"))
