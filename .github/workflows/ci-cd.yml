@@ -130,10 +130,6 @@ jobs:
           args: >
             -Dsonar.projectKey=ShaimaNourddine_scoring-resiliation
             -Dsonar.organization=shaimanourddine
-            -Dsonar.sources=.,scoring-app/src
-            -Dsonar.exclusions=**/node_modules/**,**/__pycache__/**,**/tests/**,scoring-app/dist/**,k8s/**,terraform/**
-            -Dsonar.python.coverage.reportPaths=coverage-api.xml
-            -Dsonar.javascript.lcov.reportPaths=scoring-app/coverage/lcov.info
             -Dsonar.qualitygate.wait=true
 
   # ============================================================
